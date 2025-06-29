@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      const userTheme = localStorage.theme;
+      const systemPrefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      if (userTheme === "dark" || (!userTheme && systemPrefersDark)) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://i.ibb.co/wF7hbThJ/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MarathonHub</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

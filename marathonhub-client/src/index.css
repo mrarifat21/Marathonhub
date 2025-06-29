@@ -1,0 +1,56 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@layer base {
+  html {
+    @apply transition-colors duration-300;
+  }
+
+  body {
+   @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+    font-family: "Inter", sans-serif;
+  }
+
+}
+           
+               
+@theme {
+  --color-background: var(--background);
+  --color-surfaceColor: var(--surface);
+  --color-text: var(--text);
+  --color-muted-text: var(--muted-text);
+  --color-border: var(--border);
+  --color-button: var(--button);
+  --color-button-hover: var(--button-hover);
+  --color-highlight: var(--highlight);
+  --color-warning: var(--warning);
+}
+
+
+:root {
+  --background: #f8f8f8; 
+  --surface: #ffffff;     
+  --text: #4a5759;       
+  --border: #e5e5e5;     
+  --button: #2a9d8f;     
+  --button-hover: #21867a; 
+  --highlight: #f4a261;   
+  --warning: #e76f51;   
+}
+.dark {
+  --background: #121212;
+  --surface: #2c2c2c;
+  --text: #f0f0f0;              
+  --muted-text: #2a9d8f;
+  --border: #264653;
+  --button: #2a9d8f;
+  --button-hover: #21867a;
+  --highlight: #f4a261;
+  --warning: #e76f51;
+}
