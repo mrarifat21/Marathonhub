@@ -70,124 +70,129 @@ const AddMarathon = () => {
         <title>Add Marathon</title>
       </Helmet>
       <div className="min-h-screen flex items-center justify-center bg-background p-4">
-        <div className="max-w-md w-11/12 mx-auto bg-surfaceColor border border-border p-8 rounded-xl shadow-lg">
+        <div className=" mx-auto bg-surfaceColor border border-border p-8 rounded-xl shadow-lg">
           <h2 className="text-3xl font-extrabold mb-8 text-center text-highlight">
             Add Marathon
           </h2>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
-            {/* Marathon Title */}
-            <div>
-              <label
-                htmlFor="title"
-                className="block mb-2 font-semibold text-text"
-              >
-                Marathon Title
-              </label>
-              <input
-                id="title"
-                type="text"
-                name="title"
-                placeholder="Enter Marathon Title"
-                className="input input-bordered w-full rounded-md bg-surfaceColor text-text border-1 border-border"
-                required
-              />
+            <div className="flex gap-5 flex-col md:flex-row">
+              {/* Marathon Title */}
+              <div>
+                <label
+                  htmlFor="title"
+                  className="block mb-2 font-semibold text-text"
+                >
+                  Marathon Title
+                </label>
+                <input
+                  id="title"
+                  type="text"
+                  name="title"
+                  placeholder="Enter Marathon Title"
+                  className="input input-bordered w-full rounded-md bg-surfaceColor text-text border-1 border-border"
+                  required
+                />
+              </div>
+              {/* Location */}
+              <div>
+                <label
+                  htmlFor="location"
+                  className="block mb-2 font-semibold text-text"
+                >
+                  Location
+                </label>
+                <input
+                  id="location"
+                  type="text"
+                  name="location"
+                  placeholder="Enter Location"
+                  className="input w-full rounded-md bg-surfaceColor text-text border-1 border-border"
+                  required
+                />
+              </div>
             </div>
 
-            {/* Start Registration Date */}
-            <div>
-              <label
-                htmlFor="startRegistrationDate"
-                className="block mb-2 font-semibold text-text"
-              >
-                Start Registration Date
-              </label>
-                            <DatePicker
-                id="startRegistrationDate"
-                name="startRegistrationDate"
-                selected={startRegistrationDate}
-                onChange={(date) => setStartRegistrationDate(date)}
-                className="input input-bordered w-full rounded-md bg-surfaceColor text-text  border-1 border-border"
-                placeholderText="Select start registration date"
-                required
-              />
+            <div className="flex gap-5 flex-col md:flex-row">
+              {/* Start Registration Date */}
+              <div>
+                <label
+                  htmlFor="startRegistrationDate"
+                  className="block mb-2 font-semibold text-text"
+                >
+                  Start Registration Date
+                </label>
+                <DatePicker
+                  id="startRegistrationDate"
+                  name="startRegistrationDate"
+                  selected={startRegistrationDate}
+                  onChange={(date) => setStartRegistrationDate(date)}
+                  className="input input-bordered w-full rounded-md bg-surfaceColor text-text  border-1 border-border"
+                  placeholderText="Select start registration date"
+                  required
+                />
+              </div>
+
+              {/* End Registration Date */}
+              <div>
+                <label
+                  htmlFor="endRegistrationDate"
+                  className="block mb-2 font-semibold text-text"
+                >
+                  End Registration Date
+                </label>
+                <DatePicker
+                  id="endRegistrationDate"
+                  name="endRegistrationDate"
+                  selected={endRegistrationDate}
+                  onChange={(date) => setEndRegistrationDate(date)}
+                  className="input input-bordered w-full rounded-md bg-surfaceColor text-text  border-1 border-border"
+                  placeholderText="Select end registration date"
+                  required
+                />
+              </div>
             </div>
 
-            {/* End Registration Date */}
-            <div>
-              <label
-                htmlFor="endRegistrationDate"
-                className="block mb-2 font-semibold text-text"
-              >
-                End Registration Date
-              </label>
-              <DatePicker
-                id="endRegistrationDate"
-                name="endRegistrationDate"
-                selected={endRegistrationDate}
-                onChange={(date) => setEndRegistrationDate(date)}
-                className="input input-bordered w-full rounded-md bg-surfaceColor text-text  border-1 border-border"
-                placeholderText="Select end registration date"
-                required
-              />
-            </div>
+            <div className="flex gap-5 flex-col md:flex-row">
+              {/* Marathon Start Date */}
+              <div>
+                <label
+                  htmlFor="marathonStartDate"
+                  className="block mb-2 font-semibold text-text"
+                >
+                  Marathon Start Date
+                </label>
+                <DatePicker
+                  id="marathonStartDate"
+                  name="marathonStartDate"
+                  selected={marathonStartDate}
+                  onChange={(date) => setMarathonStartDate(date)}
+                  className="input input-bordered w-full rounded-md bg-surfaceColor text-text  border-1 border-border"
+                  placeholderText="Select marathon start date"
+                  required
+                />
+              </div>
 
-            {/* Marathon Start Date */}
-            <div>
-              <label
-                htmlFor="marathonStartDate"
-                className="block mb-2 font-semibold text-text"
-              >
-                Marathon Start Date
-              </label>
-              <DatePicker
-                id="marathonStartDate"
-                name="marathonStartDate"
-                selected={marathonStartDate}
-                onChange={(date) => setMarathonStartDate(date)}
-                className="input input-bordered w-full rounded-md bg-surfaceColor text-text  border-1 border-border"
-                placeholderText="Select marathon start date"
-                required
-              />
-            </div>
-
-            {/* Location */}
-            <div>
-              <label
-                htmlFor="location"
-                className="block mb-2 font-semibold text-text"
-              >
-                Location
-              </label>
-              <input
-                id="location"
-                type="text"
-                name="location"
-                placeholder="Enter Location"
-                className="input w-full rounded-md bg-surfaceColor text-text border-1 border-border"
-                required
-              />
-            </div>
-
-            {/* Running Distance */}
-            <div>
-              <label
-                htmlFor="runningDistance"
-                className="block mb-2 font-semibold text-text"
-              >
-                Running Distance
-              </label>
-              <select
-                id="runningDistance"
-                name="runningDistance"
-                className="select w-full rounded-md bg-surfaceColor text-text border-1 border-border"
-                required
-              >
-                <option value="">Select distance</option>
-                <option value="25k">25k</option>
-                <option value="10k">10k</option>
-                <option value="3k">3k</option>
-              </select>
+              {/* Running Distance */}
+              <div>
+                <label
+                  htmlFor="runningDistance"
+                  className="block mb-2 font-semibold text-text"
+                >
+                  Running Distance
+                </label>
+                <select
+                  id="runningDistance"
+                  name="runningDistance"
+                  className="select w-full rounded-md bg-surfaceColor text-text border-1 border-border"
+                  required
+                >
+                  <option value="">Select distance</option>
+                  <option value="25k">25k</option>
+                  <option value="10k">10k</option>
+                  <option value="3k">3k</option>
+                </select>
+              </div>
             </div>
 
             {/* Description */}

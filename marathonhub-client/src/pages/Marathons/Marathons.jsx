@@ -61,7 +61,7 @@ const Marathons = () => {
       ) : marathons.length === 0 ? (
         <p className="text-center text-muted-text">No marathons available</p>
       ) : (
-        <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-8 my-5">
+        <div className="grid lg:grid-cols-4 grid-cols-1 md:grid-cols-2 gap-8 my-5">
           {marathons.map((marathon) => (
             <Marathon key={marathon._id} marathon={marathon} />
           ))}

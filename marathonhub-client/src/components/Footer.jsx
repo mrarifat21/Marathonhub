@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -35,12 +36,23 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Social Media */}
           <div>
-            <h6 className="text-text font-semibold mb-4">Contact</h6>
-            <ul className="space-y-2 text-sm">
-              <li><a href="" className="hover:text-highlight transition">Email Us</a></li>
-              <li><a href="" className="hover:text-highlight transition">Support Center</a></li>
-            </ul>
+            <h6 className="text-text font-semibold mb-4">Follow Us</h6>
+            <div className="flex space-x-4 text-xl">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-highlight transition">
+                <FaFacebookF />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-highlight transition">
+                <FaTwitter />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-highlight transition">
+                <FaInstagram />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-highlight transition">
+                <FaLinkedinIn />
+              </a>
+            </div>
           </div>
         </div>
       </div>

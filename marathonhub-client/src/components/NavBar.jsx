@@ -37,6 +37,14 @@ const NavBar = () => {
       </li>
       <li>
         <NavLink
+          to="/aboutUs"
+          className={({ isActive }) => (isActive ? activeClass : inactiveClass)}
+        >
+          About Us
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
           to="/marathons"
           className={({ isActive }) => (isActive ? activeClass : inactiveClass)}
         >
@@ -94,7 +102,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className="navbar w-11/12 mx-auto px-4 py-3  flex justify-between items-center border-b-2"
+      className="navbar  w-11/12 px-4 py-3  flex justify-between items-center border-b-2  mx-auto z-1000"
       role="navigation"
       aria-label="Main navigation"
     >

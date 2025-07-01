@@ -13,9 +13,9 @@ const Home = () => {
   const [marathons, setMarathons] = useState([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/marathons?limit=6`) 
+    fetch(`${import.meta.env.VITE_API_URL}/marathons?limit=8`) 
       .then((res) => res.json())
-      .then((data) => setMarathons(data.slice(0, 6))); 
+      .then((data) => setMarathons(data.slice(0, 8))); 
   }, []);
   return (
     <>
@@ -30,7 +30,7 @@ const Home = () => {
            Marathons
         </h2>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
           {marathons.map((marathon) => (
             <Marathon key={marathon._id} marathon={marathon} />
           ))}

@@ -225,7 +225,9 @@ const MyApplyList = () => {
                 required
               />
             </div>
-
+            <label className="block mb-2 font-semibold text-text">
+                Contact Number
+              </label>
             <input
               type="text"
               name="contactNumber"
@@ -235,7 +237,9 @@ const MyApplyList = () => {
               className="input w-full rounded-md bg-surfaceColor text-text border-1 border-border"
               required
             />
-
+<label className="block mb-2 font-semibold text-text">
+               Additional Info
+              </label>
             <textarea
               name="additionalInfo"
               value={formData.additionalInfo}
@@ -245,12 +249,12 @@ const MyApplyList = () => {
             />
 
             <div className="modal-action">
-              <button type="submit" className="btn bg-[#2a9d8f] text-white">
+              <button type="submit" className="btn border-none bg-[#2a9d8f] text-white">
                 Save Changes
               </button>
               <button
                 type="button"
-                className="btn"
+                className="btn border-none"
                 onClick={() => {
                   document.getElementById("update_modal").close();
                   setSelectedReg(null);

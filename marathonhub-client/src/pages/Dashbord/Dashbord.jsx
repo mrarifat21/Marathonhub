@@ -15,7 +15,7 @@ const Dashboard = () => {
     </Helmet>
     <div className="flex flex-col min-h-screen bg-background text-text transition-all duration-300">
       {/* Top Nav */}
-      <NavBar />
+      {/* <NavBar /> */}
 
       {/* Mobile Menu Toggle */}
       <div className="md:hidden flex items-center justify-between px-4 py-3 border-b border-border bg-surfaceColor shadow">
@@ -70,6 +70,18 @@ const Dashboard = () => {
             >
               My Apply List
             </NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `transition hover:text-highlight ${
+                  isActive ? 'text-highlight underline' : ''
+                }`
+              }
+              onClick={() => setSidebarOpen(false)}
+            >
+              Back to home
+            </NavLink>
+
           </nav>
         </aside>
 
