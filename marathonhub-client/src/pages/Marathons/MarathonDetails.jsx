@@ -17,7 +17,6 @@ const MarathonDetails = () => {
     userName
   } = marathon;
 
-
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
@@ -54,78 +53,244 @@ const MarathonDetails = () => {
   };
 
   return (
-    <div className="min-h-screen shadow-2xl flex items-center justify-center px-4 py-8">
-      <div className="max-w-5xl w-full bg-background rounded-xl shadow-md p-6 md:p-10">
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* Image and Countdown */}
-          <div className="md:w-1/2 relative">
-            <img
-              src={imageURL}
-              alt={title}
-              className="w-full rounded-lg shadow-lg"
-            />
+    <div 
+      className="min-h-screen py-12 px-4 md:px-6"
+      style={{ backgroundColor: 'var(--color-background)' }}
+    >
+      <div className="max-w-6xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-8">
+          <h1 
+            className="text-3xl md:text-4xl font-bold mb-2"
+            style={{ color: 'var(--color-text)' }}
+          >
+            Marathon Details
+          </h1>
+          <p 
+            className="text-lg"
+            style={{ color: 'var(--color-muted-text)' }}
+          >
+            Everything you need to know about this exciting event
+          </p>
+        </div>
 
-            {/* Countdown Timer at bottom-left of image */}
-            <div className="absolute bottom-2 left-1 right-1 mx-auto md:bottom-4 md:left-4 md:right-auto z-10 flex justify-center">
-              <div className="bg-black/60 backdrop-blur-md p-3 rounded-xl shadow-2xl">
-                <CountdownCircleTimer
-                  isPlaying
-                  duration={remainingTime}
-                  colors={[
-                    ["#00b894", 0.4],
-                    ["#0984e3", 0.3],
-                    ["#d63031", 0.2],
-                  ]}
-                  size={130}
-                  strokeWidth={6}
-                >
-                  {renderTime}
-                </CountdownCircleTimer>
+        {/* Main Content Card */}
+        <div 
+          className="rounded-2xl shadow-2xl p-6 md:p-10"
+          style={{ 
+            backgroundColor: 'var(--color-surfaceColor)',
+            border: '2px solid var(--color-border)'
+          }}
+        >
+          <div className="flex flex-col lg:flex-row gap-10">
+            {/* Image and Countdown Section */}
+            <div className="lg:w-1/2">
+              <div className="relative">
+                <img
+                  src={imageURL}
+                  alt={title}
+                  className="w-full h-80 md:h-96 object-cover rounded-xl shadow-lg"
+                />
+                
+                {/* Countdown Timer Overlay */}
+                <div className="absolute bottom-4 left-4 z-10">
+                  <div 
+                    className="p-4 rounded-2xl shadow-2xl backdrop-blur-md"
+                    style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
+                  >
+                    <CountdownCircleTimer
+                      isPlaying
+                      duration={remainingTime}
+                      colors={[
+                        ["#00b894", 0.4],
+                        ["#0984e3", 0.3],
+                        ["#d63031", 0.2],
+                      ]}
+                      size={120}
+                      strokeWidth={6}
+                    >
+                      {renderTime}
+                    </CountdownCircleTimer>
+                  </div>
+                </div>
+
+                {/* Registration Status Badge */}
+                <div className="absolute top-4 right-4">
+                  <div 
+                    className="px-4 py-2 rounded-full font-semibold text-sm shadow-lg"
+                    style={{ 
+                      backgroundColor: isRegistrationOpen ? 'var(--color-button)' : 'var(--color-warning)',
+                      color: 'white'
+                    }}
+                  >
+                    {isRegistrationOpen ? '✅ Open for Registration' : '❌ Registration Closed'}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Marathon Info */}
-          <div className="md:w-1/2 space-y-4 text-text">
-            <h2 className="text-3xl font-bold text-highlight">{title}</h2>
-            <p className="text-lg text-muted-text">Organized by: {userName}</p>
-            <p className="font-medium">📍 Location: {location}</p>
-            <p className="font-medium">
-              📆 Registration Start: {startRegistrationDate}
-            </p>
-            <p className="font-medium">
-              📆 Registration End: {endRegistrationDate}
-            </p>
-            <p className="font-medium">🏁 Marathon Date: {marathonStartDate}</p>
-            <p className="font-medium">📏 Distance: {runningDistance}</p>
-            <p className="font-medium">
-              👥 Registered Participants: {registrationCount}
-            </p>
-            <div className="mt-4">
-              <p className="font-semibold">About:</p>
-              <p className="text-justify">{description}</p>
-            </div>
+            {/* Marathon Information Section */}
+            <div className="lg:w-1/2 space-y-6">
+              {/* Title and Organizer */}
+              <div>
+                <h2 
+                  className="text-3xl md:text-4xl font-bold mb-3 leading-tight"
+                  style={{ color: 'var(--color-highlight)' }}
+                >
+                  {title}
+                </h2>
+                <p 
+                  className="text-lg font-medium"
+                  style={{ color: 'var(--color-muted-text)' }}
+                >
+                  Organized by: <span style={{ color: 'var(--color-text)' }}>{userName}</span>
+                </p>
+              </div>
 
-            <div className="pt-4 flex gap-5 flex-wrap">
-              {isRegistrationOpen ? (
-                <Link to="/marathonRegistration" state={{ marathon }}>
-                  <button className="btn bg-button hover:bg-button-hover text-white rounded-xl border-none">
-                    Register for Marathon
+              {/* Event Details Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div 
+                  className="p-4 rounded-lg"
+                  style={{ 
+                    backgroundColor: 'var(--color-background)',
+                    border: '1px solid var(--color-border)'
+                  }}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">📍</span>
+                    <span className="font-semibold" style={{ color: 'var(--color-text)' }}>Location</span>
+                  </div>
+                  <p style={{ color: 'var(--color-muted-text)' }}>{location}</p>
+                </div>
+
+                <div 
+                  className="p-4 rounded-lg"
+                  style={{ 
+                    backgroundColor: 'var(--color-background)',
+                    border: '1px solid var(--color-border)'
+                  }}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">📏</span>
+                    <span className="font-semibold" style={{ color: 'var(--color-text)' }}>Distance</span>
+                  </div>
+                  <p style={{ color: 'var(--color-muted-text)' }}>{runningDistance}</p>
+                </div>
+
+                <div 
+                  className="p-4 rounded-lg"
+                  style={{ 
+                    backgroundColor: 'var(--color-background)',
+                    border: '1px solid var(--color-border)'
+                  }}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">🏁</span>
+                    <span className="font-semibold" style={{ color: 'var(--color-text)' }}>Event Date</span>
+                  </div>
+                  <p style={{ color: 'var(--color-muted-text)' }}>{marathonStartDate}</p>
+                </div>
+
+                <div 
+                  className="p-4 rounded-lg"
+                  style={{ 
+                    backgroundColor: 'var(--color-background)',
+                    border: '1px solid var(--color-border)'
+                  }}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">👥</span>
+                    <span className="font-semibold" style={{ color: 'var(--color-text)' }}>Participants</span>
+                  </div>
+                  <p style={{ color: 'var(--color-muted-text)' }}>{registrationCount} registered</p>
+                </div>
+              </div>
+
+              {/* Registration Period */}
+              <div 
+                className="p-4 rounded-lg"
+                style={{ 
+                  backgroundColor: 'var(--color-background)',
+                  border: '1px solid var(--color-border)'
+                }}
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xl">📅</span>
+                  <span className="font-semibold" style={{ color: 'var(--color-text)' }}>Registration Period</span>
+                </div>
+                <div className="space-y-2">
+                  <p style={{ color: 'var(--color-muted-text)' }}>
+                    <span className="font-medium">Start:</span> {startRegistrationDate}
+                  </p>
+                  <p style={{ color: 'var(--color-muted-text)' }}>
+                    <span className="font-medium">End:</span> {endRegistrationDate}
+                  </p>
+                </div>
+              </div>
+
+              {/* Description */}
+              <div 
+                className="p-4 rounded-lg"
+                style={{ 
+                  backgroundColor: 'var(--color-background)',
+                  border: '1px solid var(--color-border)'
+                }}
+              >
+                <h3 className="font-semibold text-lg mb-3" style={{ color: 'var(--color-text)' }}>
+                  About This Marathon
+                </h3>
+                <p className="text-justify leading-relaxed" style={{ color: 'var(--color-muted-text)' }}>
+                  {description}
+                </p>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                {isRegistrationOpen ? (
+                  <Link to="/marathonRegistration" state={{ marathon }} className="flex-1">
+                    <button 
+                      className="w-full px-8 py-4 rounded-xl font-semibold text-white shadow-lg transition-all duration-200 hover:shadow-xl hover:scale-105"
+                      style={{ backgroundColor: 'var(--color-button)' }}
+                      onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--color-button-hover)'}
+                      onMouseLeave={(e) => e.target.style.backgroundColor = 'var(--color-button)'}
+                    >
+                      🏃‍♂️ Register for Marathon
+                    </button>
+                  </Link>
+                ) : (
+                  <button 
+                    className="flex-1 px-8 py-4 rounded-xl font-semibold cursor-not-allowed shadow-lg opacity-50"
+                    style={{ 
+                      backgroundColor: 'var(--color-warning)',
+                      color: 'white'
+                    }}
+                    disabled
+                  >
+                    ❌ Registration Closed
+                  </button>
+                )}
+                
+                <Link to={-1} className="flex-1 sm:flex-initial">
+                  <button 
+                    className="w-full px-8 py-4 rounded-xl font-semibold shadow-lg transition-all duration-200 hover:scale-105"
+                    style={{ 
+                      backgroundColor: 'var(--color-background)',
+                      color: 'var(--color-text)',
+                      border: '2px solid var(--color-border)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.borderColor = 'var(--color-button)';
+                      e.target.style.color = 'var(--color-button)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.borderColor = 'var(--color-border)';
+                      e.target.style.color = 'var(--color-text)';
+                    }}
+                  >
+                    ← Go Back
                   </button>
                 </Link>
-              ) : (
-                <button
-                  className="btn bg-gray-500 text-gray-600 dark:bg-gray-700 dark:text-gray-300 cursor-not-allowed rounded-xl border-none"
-                  
-                >
-                  Registration Closed
-                </button>
-              )}
-              <Link to={-1}>
-                <button className="btn bg-button hover:bg-button-hover rounded-xl border-none">
-                  Back
-                </button>
-              </Link>
+              </div>
             </div>
           </div>
         </div>
