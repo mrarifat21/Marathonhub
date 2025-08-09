@@ -8,6 +8,7 @@ import UpcomingMarathons from "./UpcomingMarathons ";
 import JoinAsOrganizer from "./JoinAsOrganizer ";
 import MarathonGallery from "./MarathonGallery";
 import { Helmet } from "react-helmet";
+import Newsletter from "./Newsletter";
 
 const Home = () => {
   const [marathons, setMarathons] = useState([]);
@@ -49,6 +50,7 @@ const Home = () => {
       <UpcomingMarathons></UpcomingMarathons>
       <MarathonGallery></MarathonGallery>
       <JoinAsOrganizer></JoinAsOrganizer>
+      <Newsletter></Newsletter>
     </div>
     </>
   );
