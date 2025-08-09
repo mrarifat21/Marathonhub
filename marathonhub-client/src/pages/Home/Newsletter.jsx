@@ -16,7 +16,7 @@ const Newsletter = () => {
       return;
     }
 
-    // Simulate successful subscription (you can replace this with an API call)
+ 
     Swal.fire({
       icon: "success",
       title: "Subscribed!",
