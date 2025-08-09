@@ -20,7 +20,7 @@
 }
            
                
-@theme {
+/* @theme {
   --color-background: var(--background);
   --color-surfaceColor: var(--surface);
   --color-text: var(--text);
@@ -53,4 +53,41 @@
   --button-hover: #21867a;
   --highlight: #f4a261;
   --warning: #e76f51;
+} */
+@theme {
+  --color-background: var(--background);
+  --color-surfaceColor: var(--surface);
+  --color-text: var(--text);
+  --color-muted-text: var(--muted-text);
+  --color-border: var(--border);
+  --color-button: var(--button);
+  --color-button-hover: var(--button-hover);
+  --color-highlight: var(--highlight);
+  --color-warning: var(--warning);
+}
+
+/* Light Mode */
+:root {
+  --background: #f5f6f7;      /* soft cool gray background */
+  --surface: #ffffff;         /* panels/cards pure white */
+  --text: #2f3e46;            /* dark text for better contrast */
+  --muted-text: #6c757d;      /* softer but readable muted text */
+  --border: #dcdcdc;          /* more visible than #e5e5e5 */
+  --button: #2a9d8f;          /* teal accent */
+  --button-hover: #21867a;    /* deeper teal on hover */
+  --highlight: #f4a261;       /* warm orange highlight */
+  --warning: #e76f51;         /* warning red-orange */
+}
+
+/* Dark Mode */
+.dark {
+  --background: #121212;      /* deep black-gray background */
+  --surface: #1e1e1e;         /* slightly lighter panels */
+  --text: #f0f0f0;            /* bright but not pure white */
+  --muted-text: #9ca3af;      /* neutral muted gray */
+  --border: #2a2a2a;          /* subtle border contrast */
+  --button: #2a9d8f;          /* consistent teal */
+  --button-hover: #21867a;    /* darker teal hover */
+  --highlight: #f4a261;       /* warm orange */
+  --warning: #e76f51;         /* red-orange warning */
 }
