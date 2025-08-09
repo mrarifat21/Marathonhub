@@ -19,8 +19,8 @@
 
 }
            
-               
-/* @theme {
+/*                
+@theme {
   --color-background: var(--background);
   --color-surfaceColor: var(--surface);
   --color-text: var(--text);
@@ -58,7 +58,6 @@
   --color-background: var(--background);
   --color-surfaceColor: var(--surface);
   --color-text: var(--text);
-  --color-muted-text: var(--muted-text);
   --color-border: var(--border);
   --color-button: var(--button);
   --color-button-hover: var(--button-hover);
@@ -68,26 +67,24 @@
 
 /* Light Mode */
 :root {
-  --background: #f5f6f7;      /* soft cool gray background */
-  --surface: #ffffff;         /* panels/cards pure white */
-  --text: #2f3e46;            /* dark text for better contrast */
-  --muted-text: #6c757d;      /* softer but readable muted text */
-  --border: #dcdcdc;          /* more visible than #e5e5e5 */
-  --button: #2a9d8f;          /* teal accent */
-  --button-hover: #21867a;    /* deeper teal on hover */
-  --highlight: #f4a261;       /* warm orange highlight */
-  --warning: #e76f51;         /* warning red-orange */
+  --background: #f7f6f3;      /* soft warm gray */
+  --surface: #ffffff;         /* bright card/panel */
+  --text: #2c3e50;            /* deep navy-gray for strong contrast */
+  --border: #d8d6d0;          /* light warm-gray border */
+  --button: #3b82f6;          /* vivid blue accent */
+  --button-hover: #2563eb;    /* darker blue on hover */
+  --highlight: #f59e0b;       /* warm amber highlight */
+  --warning: #dc2626;         /* strong red for warnings */
 }
 
 /* Dark Mode */
 .dark {
-  --background: #121212;      /* deep black-gray background */
-  --surface: #1e1e1e;         /* slightly lighter panels */
-  --text: #f0f0f0;            /* bright but not pure white */
-  --muted-text: #9ca3af;      /* neutral muted gray */
-  --border: #2a2a2a;          /* subtle border contrast */
-  --button: #2a9d8f;          /* consistent teal */
-  --button-hover: #21867a;    /* darker teal hover */
-  --highlight: #f4a261;       /* warm orange */
-  --warning: #e76f51;         /* red-orange warning */
+  --background: #181a1b;      /* rich charcoal */
+  --surface: #232627;         /* slightly lighter surface for depth */
+  --text: #e5e7eb;            /* soft white text */
+  --border: #2f3435;          /* subtle border tone */
+  --button: #60a5fa;          /* lighter blue for dark background */
+  --button-hover: #3b82f6;    /* deeper blue hover */
+  --highlight: #fbbf24;       /* bright amber highlight */
+  --warning: #f87171;         /* softer red for dark mode */
 }

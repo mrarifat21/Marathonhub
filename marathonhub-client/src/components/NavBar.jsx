@@ -22,7 +22,7 @@ const NavBar = () => {
       });
   };
 
-  const activeClass = "text-button font-semibold underline";
+  const activeClass = "text-button font-semibold ";
   const inactiveClass = "text-text hover:text-button transition";
 
   const navLinks = (
